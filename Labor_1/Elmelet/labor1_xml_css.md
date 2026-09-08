@@ -626,3 +626,38 @@ Nem minden tulajdonság öröklődik.
 
 ---
 https://quizlet.com/hu/1205024248/labor-1-flash-cards/?i=79t58a&x=1jqt
+
+# Feladat:
+Ültesd át a [hamlet.txt](hamlet.txt) állomány tartalmát XML-be. Készíts a dokumentum megjelenítéséhez egy CSS stíluslapot, amely az [itt](hamlet.png) látható elrendezést eredményezi a böngészőben.
+
+A munka megkezdése előtt telepítsd a Visual Studio Code-ban a RedHat [XML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml) bővítményét.
+
+## Hogyan kezdjünk neki a feladatnak?
+
+Egy csupasz szövegfájl elsőre ijesztő lehet: nincs benne egyetlen címke sem. Íme néhány tipp, hogy hogyan lehet ezt mégis kicsit könnyebben nekifutni :)
+
+> **Minek mije van?** és **mi miből áll?**
+
+### Kezdjük a legnagyobb egységgel
+
+Itt ez maga a mű, ez lesz a gyökérelem: `play`.
+
+- **Mije van?** Címe és szerzője -> `title`, `author`
+- **Miből áll?** Felvonásokból -> `act`
+
+```xml
+<play>
+    <author>...</author>
+    <title>...</title>
+    <act>...</act>
+</play>
+```
+
+### Aztán ugyanez a két kérdés egy szinttel lejjebb
+
+- **Felvonás:** van címe (`title`), és jelenetekből áll (`scene`)
+- **Jelenet:** van címe (`title`), megszólalásokból áll (`speech`), és lehetnek benne színpadi utasítások (`stagedir`)
+- **Megszólalás:** van beszélője (`speaker`), sorokból áll (`line`), és itt is előfordulhat színpadi utasítás (`stagedir`)
+- **Sor:** szöveget tartalmaz, és lehet benne soron belüli színpadi utasítás (`stagedir`)
+
+![XML felépítése](xml_felepites.png)

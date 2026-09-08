@@ -1,0 +1,149 @@
+* {
+    /* Minden XML elem alapértelmezetten külön sorban, blokk elemként jelenjen meg */
+    display: block;
+}
+
+/* A line közvetlen gyermekeként szereplő stagedir elem ne törje meg a sort */
+line > stagedir {
+    display: inline;
+}
+
+play {
+    /* Fehér háttérszín */
+    background-color: white;
+
+    /* Betűtípusok: ha az első nem elérhető, a többi fallbackként szolgál */
+    font-family: "Palatino Linotype", Palatino, "Times New Roman", serif;
+
+    /* A sorok közötti távolság a betűméret másfélszerese */
+    line-height: 1.5;
+
+    /* Automatikusan középre igazítja az elemet */
+    margin: auto;
+
+    /* A tartalom maximális szélessége körülbelül 70 karakter */
+    max-width: 70ch;
+
+    /* Belső térköz az elem tartalma és széle között */
+    padding: 2em;
+}
+
+/* Az author és title elemek formázása */
+author, title {
+    /* A kisbetűket kiskapitális formában jeleníti meg */
+    font-variant: small-caps;
+
+    /* A szöveget középre igazítja */
+    text-align: center;
+}
+
+/* Az author elemek és a play közvetlen gyermekeként szereplő title formázása */
+author, play > title {
+    /* Félkövér betűstílus */
+    font-weight: bold;
+}
+
+/* Csak a play közvetlen gyermekeként szereplő title elem formázása */
+play > title {
+    /* Nagyon nagy betűméret */
+    font-size: xx-large;
+
+    /* Megnöveli a karakterek közötti távolságot */
+    letter-spacing: 0.06em;
+
+    /* Felső margó */
+    margin-top: 0.5em;
+
+    /* Szürke árnyékot ad a szöveghez */
+    text-shadow: 1px 1px 2px gray;
+}
+
+/* Az author elemek és az act közvetlen gyermekeként szereplő title formázása */
+author, act > title {
+    /* Nagy betűméret */
+    font-size: x-large;
+}
+
+/* A scene közvetlen gyermekeként szereplő title elem formázása */
+scene > title {
+    /* Palakék háttérszín */
+    background-color: slateblue;
+
+    /* Szürke árnyékot ad a cím körüli doboznak box-shadow: vízszintes-eltolás függőleges-eltolás elmosás szín;*/
+    box-shadow: 0.25em 0.25em 0.5em gray;
+
+    /* Fehér betűszín */
+    color: white;
+
+    /* Nagy betűméret */
+    font-size: large;
+
+    /* Belső térköz a cím szövege és a háttér széle között */
+    padding: 0.5em;
+}
+
+act {
+    /* Dupla fekete felső szegély */
+    border-top: medium double black;
+
+    /* Távolság az előző elem és az act között */
+    margin-top: 2em;
+
+    /* Távolság a felső szegély és az act tartalma között */
+    padding-top: 1.5em;
+}
+
+scene {
+    /* Belső térköz a scene felső része és a tartalma között */
+    padding-top: 1em;
+}
+
+/* A speech elemek és a scene közvetlen stagedir gyermekei */
+speech, scene > stagedir {
+    /* Távolságot hagy az előző elem fölött */
+    margin-top: 1em;
+}
+
+stagedir {
+    /* Szürke betűszín */
+    color: gray;
+
+    /* Dőlt betűstílus */
+    font-style: italic;
+
+    /* Megnöveli a karakterek közötti távolságot */
+    letter-spacing: 0.05em;
+}
+
+/* Minden stagedir elem tartalma elé beszúr egy nyitó zárójelet */
+stagedir::before {
+    content: "(";
+}
+
+/* Minden stagedir elem tartalma után beszúr egy záró zárójelet */
+stagedir::after {
+    content: ")";
+}
+
+/* A speech közvetlen line és stagedir gyermekei */
+speech > line, speech > stagedir {
+    /* Balról beljebb húzza a szöveget */
+    margin-left: 1em;
+}
+
+/* Csak a scene közvetlen gyermekeként szereplő stagedir elemek */
+scene > stagedir {
+    /* A szöveget középre igazítja */
+    text-align: center;
+}
+
+speaker {
+    /* Félkövér betűstílus */
+    font-weight: bold;
+
+    /* Kis távolságot hagy a speaker és az alatta lévő elem között */
+    margin-bottom: 0.25em;
+
+    /* A szöveget nagybetűssé alakítja */
+    text-transform: uppercase;
+}
