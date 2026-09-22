@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT book (author, title, chapter*)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT chapter (title, para*)>
+<!ELEMENT para (#PCDATA | footnote)*>
+<!ELEMENT footnote (#PCDATA)>

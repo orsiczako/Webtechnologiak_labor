@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book SYSTEM "book.dtd">
+<?xml-stylesheet href="book.css" type="text/css"?>
+<!-- Source: https://www.gutenberg.org/ebooks/2852 -->
+<!-- Footnotes were added by Péter Jeszenszky -->
+<book>
+    <author>Sir Arthur Conan Doyle</author>
+    <title>The Hound of the Baskervilles</title>
+    <chapter>
+        <title>Mr. Sherlock Holmes</title>
+        <para>Mr. Sherlock Holmes, who was usually very late in the mornings, save upon those not
+            infrequent occasions when he was up all night, was seated at the breakfast table. I
+            stood upon the hearth-rug and picked up the stick which our visitor had left behind him
+            the night before. It was a fine, thick piece of wood, bulbous-headed, of the sort which
+            is known as a “Penang lawyer.” Just under the head was a broad silver band nearly an
+            inch across. “To James Mortimer, M.R.C.S.<footnote>Member of the Royal Colleges of
+            Surgeons</footnote>, from his friends of the C.C.H.<footnote>Charing Cross Hospital</footnote>,”
+            was engraved upon it, with the date “1884.” It was just such a stick as the
+            old-fashioned family practitioner used to carry—dignified, solid, and reassuring.</para>
+        <para>“Well, Watson, what do you make of it?”</para>
+        <para>Holmes was sitting with his back to me, and I had given him no sign of my occupation.</para>
+        <para>“How did you know what I was doing? I believe you have eyes in the back of your head.”</para>
+        <para>“I have, at least, a well-polished, silver-plated coffee-pot in front of me,” said he.
+            “But, tell me, Watson, what do you make of our visitor’s stick? Since we have been so
+            unfortunate as to miss him and have no notion of his errand, this accidental souvenir
+            becomes of importance. Let me hear you reconstruct the man by an examination of it.”</para>
+        <para>“I think,” said I, following as far as I could the methods of my companion, “that Dr.
+            Mortimer is a successful, elderly medical man, well-esteemed since those who know him
+            give him this mark of their appreciation.”</para>
+        <para>“Good!” said Holmes. “Excellent!”</para>
+        <para>“I think also that the probability is in favour of his being a country practitioner
+            who does a great deal of his visiting on foot.”</para>
+        <!-- ... -->
+    </chapter>
+    <chapter>
+        <title>The Curse of the Baskervilles</title>
+        <para>“I have in my pocket a manuscript,” said Dr. James Mortimer.</para>
+        <para>“I observed it as you entered the room,” said Holmes.</para>
+        <para>“It is an old manuscript.”</para>
+        <para>“Early eighteenth century, unless it is a forgery.”</para>
+        <para>“How can you say that, sir?”</para>
+        <para>“You have presented an inch or two of it to my examination all the time that you have
+            been talking. It would be a poor expert who could not give the date of a document within
+            a decade or so. You may possibly have read my little monograph upon the subject. I put
+            that at 1730.”</para>
+        <para>“The exact date is 1742.” Dr. Mortimer drew it from his breast-pocket. “This family
+            paper was committed to my care by Sir Charles Baskerville, whose sudden and tragic death
+            some three months ago created so much excitement in Devonshire<footnote>Former name of
+            Devon, a county of England</footnote>. I may say that I was his personal friend as well
+            as his medical attendant. He was a strong-minded man, sir, shrewd, practical, and as
+            unimaginative as I am myself. Yet he took this document very seriously, and his mind was
+            prepared for just such an end as did eventually overtake him.”</para>
+        <!-- ... -->
+    </chapter>
+    <!-- ... -->
+</book>

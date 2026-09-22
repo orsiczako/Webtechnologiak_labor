@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--A DTD meghatározza,
+hogy milyen elemek szerepelhetnek az XML dokumentumban,
+és azok milyen szerkezetben követhetik egymást.-->
+<!--
+    A book elem tartalma ebben a sorrendben:
+    pontosan egy author,
+    pontosan egy title,
+    majd 0 vagy több chapter elem.
+    A * jelentése: 0 vagy több előfordulás.-->
+<!ELEMENT book (author, title, chapter*)>
+<!--
+Az author és title elem csak szöveget tartalmazhat.
+ A #PCDATA jelentése: feldolgozott szöveges adat
+(Parsed Character Data).
+-->
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!--
+    Egy chapter elemben először pontosan egy title található,
+    amelyet 0 vagy több para elem követhet.
+ -->
+<!ELEMENT chapter (title, para*)>
+    <!--A | jelentése: "vagy".
+    A * azt jelenti, hogy ezek 0 vagy több alkalommal,
+    tetszőleges sorrendben fordulhatnak elő.
+    -->
+<!ELEMENT para (#PCDATA | footnote)*>
+<!ELEMENT footnote (#PCDATA)>

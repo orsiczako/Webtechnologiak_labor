@@ -1,0 +1,144 @@
+/* Google Fonts betűtípusok betöltése */
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond");
+@import url("https://fonts.googleapis.com/css2?family=Anton");
+
+/* Ezek az XML-elemek külön blokkokban jelenjenek meg */
+book, author, title, chapter, para {
+    display: block;
+}
+
+book {
+    /* A könyv alapvető megjelenése */
+    background-color: #F8F8F8;
+    color: #222;
+
+    /* A fejezet- és lábjegyzetszámláló kezdőértékének beállítása */
+    counter-reset: chapter-number footnote-number;
+
+    /* Elsődleges betűtípus és tartalék betűtípusok */
+    font-family: "EB Garamond", Garamond, Georgia, "Times New Roman", Times, serif;
+
+    /* A könyv középre igazítása */
+    margin: auto;
+
+    /* A szöveg maximális szélességének korlátozása */
+    max-width: 80ch;
+
+    /* Belső térköz */
+    padding: 2em;
+}
+
+/* A szerző és a címek középre igazítása */
+author, title {
+    text-align: center;
+    font-family: Anton, sans-serif;
+}
+
+author {
+    font-size: 2em;
+}
+
+/* Csak a book közvetlen title gyereke, vagyis a könyv főcíme */
+book > title {
+    font-size: 3em;
+    margin: 0.5em 0 1em 0;
+}
+
+/* A szerző és a könyv főcímének formázása */
+author, book > title {
+    /* Kiskapitális megjelenítés */
+    font-variant: small-caps;
+
+    /* Betűk közötti távolság */
+    letter-spacing: 0.1em;
+}
+
+/* A könyvcím után közvetlenül következő fejezet felső szegélye */
+book > title + chapter {
+    border-top: medium double black;
+}
+
+/* A fejezetek közvetlen title gyerekei */
+chapter > title {
+    font-size: x-large;
+    margin: 1.5em 0 0.75em 0;
+}
+
+/* Automatikus fejezetszámozás a cím előtt */
+chapter > title::before {
+    /* A fejezetszám nagy római számmal jelenik meg */
+    content: "Chapter " counter(chapter-number, upper-roman) "\2014";
+
+    /* Minden fejezetcímnél növeljük a számlálót */
+    counter-increment: chapter-number;
+}
+
+para {
+    /* Sorok közötti távolság */
+    line-height: 1.5;
+
+    margin: 0.75em 0;
+
+    /* A bekezdés első sorának behúzása */
+    text-indent: 1.5em;
+}
+
+/* A cím után közvetlenül következő bekezdés ne legyen behúzva */
+title + para {
+    text-indent: 0;
+}
+
+/* A cím utáni első bekezdés első betűjének kiemelése */
+title + para::first-letter {
+    font-size: 1.7em;
+    font-weight: bold;
+    line-height: 1;
+    margin-right: 0.05em;
+}
+
+/* A bekezdés kiemelése, amikor fölé visszük az egeret */
+para:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+footnote {
+    /* A kurzor jelzi, hogy további információ érhető el */
+    cursor: help;
+
+    /* A lábjegyzet a folyószövegben marad */
+    display: inline;
+
+    /* A valódi lábjegyzetszöveg alapállapotban nem látható */
+    font-size: 0;
+
+    /* Felső indexhez hasonló elhelyezés */
+    vertical-align: super;
+}
+
+/* Automatikusan generált lábjegyzetszám */
+footnote::before {
+    content: "[" counter(footnote-number) "]";
+
+    /* Minden lábjegyzetnél növeljük a számlálót */
+    counter-increment: footnote-number;
+
+    font-size: small;
+}
+
+/* Rámutatáskor megjelenik a lábjegyzet tényleges tartalma */
+footnote:hover {
+    background-color: #6A1B9A;
+    color: white;
+    font-size: large;
+    padding: 0.5em;
+
+    /* Visszahelyezzük a normál szövegsorra */
+    vertical-align: baseline;
+}
+
+/* Rámutatáskor a generált lábjegyzetszám is nagyobb lesz */
+footnote:hover::before {
+    font-size: large;
+    padding-right: 0.25em;
+}

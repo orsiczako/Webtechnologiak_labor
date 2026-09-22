@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="album.css"?>
+<album>
+    <artist>Archive</artist>
+    <title>Glass Minds</title>
+    <year>2026</year>
+    <genres>
+        <genre>electronica</genre>
+        <genre>trip-hop</genre>
+        <genre>progressive rock</genre>
+    </genres>
+    <tracks>
+        <track>
+            <title>Broken Bits </title>
+            <length>6:51</length>
+        </track>
+        <track>
+            <title>Glass Minds</title>
+            <length>5:54</length>
+        </track>
+        <track>
+            <title>Patterns</title>
+            <length>8:20</length>
+        </track>
+        <track>
+            <title>Look At Us</title>
+            <length>5:37</length>
+        </track>
+        <track>
+            <title>When You're This Down</title>
+            <length>5:48</length>
+        </track>
+        <track>
+            <title>So Far From Losing You</title>
+            <length>7:51</length>
+        </track>
+        <track>
+            <title>Wake Up Strange</title>
+            <length>5:31</length>
+        </track>
+        <track>
+            <title>City Walls</title>
+            <length>5:11</length>
+        </track>
+        <track>
+            <title>The Love The Light</title>
+            <length>6:14</length>
+        </track>
+        <track>
+            <title>Shine Out Power</title>
+            <length>4:58</length>
+        </track>
+        <track>
+            <title>Heads Are Gonna Roll</title>
+            <length>6:56</length>
+        </track>
+        <track>
+            <title>Where I Am</title>
+            <length>8:36</length>
+        </track>
+    </tracks>
+</album>

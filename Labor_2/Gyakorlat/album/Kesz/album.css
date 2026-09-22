@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+album {
+    /*A képen látható, hogy egy fekete keretben van a tartalom
+    border: keret vastagsága, stílus, színe*/
+    border: thin solid black;
+    /*A sarkai le vannak kerekítve*/
+    border-radius:0.5em; /*em: a betűméret alapján*/
+    /*box-shadow: */
+    box-shadow: 0.25rem 0.25rem 0.5rem gray;
+    /*Az <album> elem maga blokkszintű elemként jelenjen meg
+    Mivel nincsen testvér eleme, így most ez annyira nem látványos*/
+    display:block;
+    /*Fallback fontok, ha az első nem érhető el*/
+    font-family: "Segoe UI", Inter, Arial, sans-serif;
+    /*Alul-felül 1rem, jobbra-balra auto, tehát középen lesz*/
+    margin: 1rem auto; 
+    /*A tartalom és a keret közötti távolság*/
+    padding:1rem; 
+    /*A szélessége a tartalomhoz igazodik*/
+    width: fit-content; 
+}
+
+/*Láthajuk a képen, hogy az artist, 
+az album közvetlen title gyereke (azért így választjuk ki, mert
+van több title is máshol), és az albuk közvetlen year gyermeke ugyanúgy van formázva*/
+artist, album > title, year {
+    /*Látható a képen, hogy a betűméret nagyobb, és félkövér*/
+    font-size: 1.5rem;
+    font-weight: bold;
+/* Soron belül marad, tehát nem kezd automatikusan új sort,
+   de blokkszerűen formázható 
+   (pl. szélesség, magasság, margó, padding). */    
+   display: inline-block;
+
+}
+
+/*Az artist után egy kötőjel szerepel*/
+artist::after{
+    content: " \2013 "; /*Unicode karakter kódja*/
+}
+year {
+    /*A képen látható, hogy a year
+    kicsit jobbra van tolva*/
+    margin-left: 0.25rem;
+}
+/*A year előtt és után zárójel van*/
+year::before {
+    content: " (";
+}
+year::after {
+    content: ") ";
+}
+/*A képen nincs megjelenítve a genres elem*/
+genres{
+    display:none;
+}
+
+/*Minden tracknél a title előtt számozás jelenjen meg*/
+track > title::before{
+    /*Létrehozunk egy track-number nevű számlálót,
+    amelynek kezdőértéke 0*/
+    content:counter(track-number) ".";
+    /*Minden új track-nél 1-gyel növeljük a számlálót*/
+    counter-increment: track-number;
+    /*A számozás soron belül marad, tehát 
+    nem kezd automatikusan új sort*/
+    display:inline-block;
+    /*A számjegyek azonos szélességűek legyenek*/
+    font-variant-numeric: tabular-nums; 
+    /*Legyen kis távolság a szám és cím között*/
+    margin-right: 0.75rem;
+    /*A számjegyek jobbra legyenek igazítva*/
+    text-align:right;
+    /*A számjegyeknek legyen fix szélessége*/
+    width:2rem;
+
+}
+tracks {
+    /*A képen látható, hogy a track-ek számozva vannak
+    Ehhez majd később fogunk létrehozni egy számlálót */
+    counter-reset: track-number;
+    /*A track-ek egy táblázatban vannak*/
+    display: table;
+    /*A track-ek és cím között van távolság*/
+    margin-top: 1.5rem;
+    /*A táblázat szélessége a szülő 
+    album szélességéhez igazodik*/
+    width: 100%;
+}
+track {
+    /*A track-ek a táblázat sorai*/
+    display: table-row;
+
+    /*Ha a háttérszín vagy a betűvastagság értéke megváltozik,
+    a változás 0.4 másodperc alatt, fokozatosan történjen.
+    A tényleges változást később a :hover szabály adja meg.*/
+    transition: background-color 0.4s, font-weight 0.4s;
+}
+/*A páratlan track-ek háttérszíne*/
+track:nth-child(odd) {
+    background-color: whitesmoke;
+}
+/*A páros track-ek háttérszíne*/
+track:nth-child(even) {
+    background-color: white;
+}
+track:hover {
+    /*Ha az egérmutató egy track fölé kerül,
+    megváltozik a háttérszíne és félkövér lesz.
+    A transition miatt ezek a változások fokozatosan történnek.*/
+    background-color: gold;
+
+    /*Az egérmutató kéz alakúra változik*/
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+/*A track címe és hossza maguk a cellák legyenek*/
+track > title, track > length {
+    display: table-cell;
+    padding: 0.5rem;
+}
+/*A track hossza jobbra legyen igazítva*/
+track > length {
+    /*A számjegyek azonos szélességűek legyenek
+    Látványosabb, ha mondjuk 111111 és 888888-ra átírunk két értéket
+    az egyesek közt több tér lesz, mint a 8-asok között*/
+    font-variant-numeric: tabular-nums;
+
+    text-align: right;
+}
+
