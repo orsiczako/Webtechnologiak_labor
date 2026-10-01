@@ -1,0 +1,21 @@
+<!-- A gyökérelem a movies. A movie* azt jelenti, hogy nulla vagy több movie elemet tartalmazhat. -->
+<!ELEMENT movies (movie*)>
+<!-- Egy movie legalább egy title elemet (title+), majd pontosan egy year elemet, legalább egy genre elemet (genre+), végül egy rating és egy votes elemet tartalmaz, ebben a sorrendben. -->
+<!ELEMENT movie (title+, year, genre+, rating, votes)>
+<!-- A movie elem attribútumai: az id tetszőleges karakteradat és kötelező (#REQUIRED), az mpa-rating pedig csak a felsorolt értékek egyikét veheti fel, és opcionális (#IMPLIED). -->
+<!ATTLIST movie
+    id CDATA #REQUIRED
+    mpa-rating (G|NC-17|PG|PG-13|R) #IMPLIED>
+<!-- A title elem csak feldolgozott karakteradatot (#PCDATA), vagyis szöveget tartalmazhat. -->
+<!ELEMENT title (#PCDATA)>
+<!-- Minden title elemhez kötelező az xml:lang attribútum. Az NMTOKEN XML-névhez használható karakterekből álló értéket enged meg. -->
+<!ATTLIST title
+    xml:lang NMTOKEN #REQUIRED>
+<!-- A year elem szöveges tartalmat tárol. -->
+<!ELEMENT year (#PCDATA)>
+<!-- A genre elem szöveges tartalmat tárol. -->
+<!ELEMENT genre (#PCDATA)>
+<!-- A rating elem szöveges tartalmat tárol. -->
+<!ELEMENT rating (#PCDATA)>
+<!-- A votes elem szöveges tartalmat tárol. -->
+<!ELEMENT votes (#PCDATA)>

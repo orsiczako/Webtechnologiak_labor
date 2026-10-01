@@ -200,7 +200,6 @@ Ez az első kivételével minden olyan `item` elemet kiválaszt, amelyet közvet
 
 ## Attribútumszelektor
 
-(Ezt még nem vettük, de az a biztos, ha ránéztek)
 
 Egy attribútum megléte alapján:
 

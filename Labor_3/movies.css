@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+movies {
+    border: medium solid indigo;
+    box-shadow: 0.25em 0.25em 0.5em indigo;
+    display: block;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    /*Betűmérethez (szülő eleméhez) viszonyított mérték, ha nő a betűméret, mondjuk egy szülőnél megadom, hogy
+    font-size:20px, és a gyerekelemnél, hogy padding:0.75, akkor az 15px lesz*/
+    margin: 1em; 
+    padding: 1em;
+}
+
+movie {
+    display: list-item;
+    list-style-type: disc;
+    margin: 0 2em;
+    padding: 0.5em;
+}
+
+title{
+    /*Egyelőre ne jelenítsük meg a címeket, annak érdekében, hogy
+    az attribútum kiválasztó döntsön arról, hogy melyik címet jelenítse meg. */
+    display:none;
+}
+
+/*Mi most csak az angol nyevlűeket akarjuk megjeleníteni
+ mellettük az évet, a műfajt, az értékelést és a szavazatok számát.*/
+
+title:lang(en), year, genre, rating, votes{
+    /*Legyenek egymás mellett*/
+    display:inline-block;
+    /*Függőleges középre igazítás*/
+    vertical-align:middle;
+}
+/*Láthatjuk, hogy a title, és a year azonos betűméretű
+tudjuk le őket egyben*/
+
+title, year{
+    font-size:1.2em;
+}
+
+/*Láthatjuk, hogy zárójelezve van az évszám*/
+year::before{
+    content:"(";
+}
+year::after{
+    content:")";
+}
+
+/*A műfaj és az elem egységesen fehér*/
+genre, rating{
+    color:white;
+}
+
+
+/*A genre elemek*/
+genre {
+    background-color:blueviolet;
+    border-radius:2em;
+    font-size:0.9em;
+    margin-right:0.25em;
+    padding:0.25em 0.6em;
+    text-align:center;
+
+}
+/*A rating legyen rózsaszín és kerekebb*/
+rating{
+    background-color:hotpink;
+    font-weight:bold;
+}
+/*Az értékelés után legyen ott, hogy /10*/
+rating::after{
+    content:"/10";
+}
+/*A szavazatok elé szükséges a from szó*/
+votes::before{
+    content:"from ";
+}
+votes::after{
+    content:" ratings";
+}
+
+/* Ha az egér egy film fölé kerül, megváltozik a film háttere. */
+movie:hover {
+    /* Hover állapotban levendulaszínű hátteret állít be. */
+    background-color: lavender;
+}
+/* A háttérszín változását animálja. */
+movie {
+    /* A background-color változása 0.4 másodperc alatt, ease időzítési függvénnyel történik. */
+    transition: background-color 0.4s ease;
+}
+
+/*Ha valaki ráviszi az egeret a filmre, akkor utána jelenjen meg
+a film linkje, amit az xml attribútumából nyerünk ki */
+movie:hover::after{
+    content: "https://www.imdb.com/title/tt" attr(id);
+    background-color:gold;
+    color:blueviolet;
+    /*Legyen vele egy sorban*/
+    display:inline-block;
+    /*Legyen fix szélességű a betűtípusa*/
+    font-family:monospace;
+    font-size:large;
+    /*Kicsit legyen távolabb a filmtől*/
+    margin-left:1em;
+}
+/*A rating és a link is kerekítve van, és van tér
+a tartalom és a keret között*/
+rating, movie:hover::after{
+    border-radius:0.25em;
+    padding:0.25em;
+}
+/*Aminek a besorolása R vagy NC-17, annak a GYEREKE, ami a title és év
+az legyen piros és félkövér
+*/
+movie:is([mpa-rating=R], [mpa-rating=NC-17]) > :is(title, year){
+    color:red;
+    font-weight:bold;
+}

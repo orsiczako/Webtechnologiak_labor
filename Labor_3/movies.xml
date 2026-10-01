@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<!-- A dokumentum típusdeklarációja a külső movies.dtd állományt kapcsolja az XML-hez. -->
+<!DOCTYPE movies SYSTEM "movies.dtd">
+<!-- A megjelenítéshez használt CSS-stíluslap társítása. -->
+<?xml-stylesheet href="movies.css" type="text/css"?>
+<!-- Source: http://www.imdb.com/ -->
+<!-- A movies a dokumentum gyökéreleme, ebben találhatók az egyes filmeket leíró movie elemek. -->
+<movies>
+     <!-- Az id attribútum az IMDb-azonosítót, az mpa-rating attribútum pedig a korhatár-besorolást
+     tárolja. -->
+     <movie id="0062622" mpa-rating="G">
+          <!-- Egy filmhez több cím is tartozhat; az xml:lang attribútum megadja a cím nyelvét. -->
+          <title xml:lang="en">2001: A Space Odyssey</title>
+          <title xml:lang="hu">2001: Űrodüsszeia</title>
+          <title xml:lang="fr">2001, L'Odyssée de l'espace</title>
+          <!-- A film megjelenési éve. -->
+          <year>1968</year>
+          <!-- A film műfaja. A DTD szerint egy filmhez egy vagy több genre elem tartozhat. -->
+          <genre>sci-fi</genre>
+          <!-- A film értékelése. -->
+          <rating>8.3</rating>
+          <!-- Az értékeléshez tartozó szavazatok száma. -->
+          <votes>731706</votes>
+     </movie>
+     <movie id="0078748" mpa-rating="R">
+          <title xml:lang="en">Alien</title>
+          <title xml:lang="hu">A nyolcadik utas: a Halál</title>
+          <title xml:lang="ja">エイリアン</title>
+          <year>1979</year>
+          <genre>horror</genre>
+          <genre>sci-fi</genre>
+          <rating>8.5</rating>
+          <votes>981779</votes>
+     </movie>
+     <movie id="0071853" mpa-rating="PG">
+          <title xml:lang="en">Monty Python and the Holy Grail</title>
+          <title xml:lang="hu">Gyalog galopp</title>
+          <title xml:lang="it">Monty Python e il Sacro Graal</title>
+          <year>1975</year>
+          <genre>adventure</genre>
+          <genre>comedy</genre>
+          <genre>fantasy</genre>
+          <rating>8.2</rating>
+          <votes>576812</votes>
+     </movie>
+     <movie id="0054215" mpa-rating="R">
+          <title xml:lang="en">Psycho</title>
+          <year>1960</year>
+          <genre>horror</genre>
+          <genre>mystery</genre>
+          <genre>thriller</genre>
+          <rating>8.5</rating>
+          <votes>730736</votes>
+     </movie>
+     <movie id="0080684" mpa-rating="PG">
+          <title xml:lang="en">Star Wars: Episode V - The Empire Strikes Back</title>
+          <title xml:lang="hu">A Birodalom visszavág</title>
+          <year>1980</year>
+          <genre>action</genre>
+          <genre>adventure</genre>
+          <genre>fantasy</genre>
+          <rating>8.7</rating>
+          <votes>1402310</votes>
+     </movie>
+     <movie id="0468569" mpa-rating="PG-13">
+          <title xml:lang="en">The Dark Knight</title>
+          <title xml:lang="hu">A sötét lovag</title>
+          <title xml:lang="el">Ο σκοτεινός ιππότης</title>
+          <year>2008</year>
+          <genre>action</genre>
+          <genre>crime</genre>
+          <genre>drama</genre>
+          <rating>9.0</rating>
+          <votes>2924774</votes>
+     </movie>
+</movies>
