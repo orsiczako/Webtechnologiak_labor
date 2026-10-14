@@ -1,0 +1,90 @@
+/* A chessboard osztályú table elemet választja ki.
+   A cellák kereteit összevonja, a táblázatot pedig vízszintesen középre igazítja. */
+table.chessboard {
+    border-collapse: collapse;
+    margin: 1rem auto;
+}
+
+/* A sakktábla összes th (fejléc-) celláját választja ki.
+   Ezek tartalmazzák a sorok és oszlopok jelöléseit (1–8 és a–h). */
+table.chessboard th {
+    font-family: sans-serif;
+    font-weight: normal;
+}
+
+/* A sakktábla sötét mezőit választja ki:
+   - páratlan sorokban a páros sorszámú td cellákat,
+   - páros sorokban a páratlan sorszámú td cellákat.
+
+   A két szelektort vesszővel kapcsoljuk össze, így mindkét csoport
+   ugyanazt a háttérszínt kapja.
+
+   Az nth-child() a tr sorok sorszámát vizsgálja a tbody-n belül,
+   az nth-of-type() pedig a td cellák sorszámát vizsgálja a soron belül.
+   A th cellák nem számítanak bele a td elemek számozásába. */
+table.chessboard > tbody > tr:nth-child(odd) > td:nth-of-type(even),
+table.chessboard > tbody > tr:nth-child(even) > td:nth-of-type(odd) {
+    background-color: lightgray;
+}
+
+/* A sakktábla világos mezőit választja ki:
+   - páratlan sorokban a páratlan sorszámú td cellákat,
+   - páros sorokban a páros sorszámú td cellákat.
+
+   Így a sötét és világos mezők váltakozva jelennek meg. */
+table.chessboard > tbody > tr:nth-child(odd) > td:nth-of-type(odd),
+table.chessboard > tbody > tr:nth-child(even) > td:nth-of-type(even) {
+    background-color: white;
+}
+
+/* A sakktábla összes td és th celláját kiválasztja.
+   Egységes betűméretet, cellaméretet és igazítást állít be.
+
+   A text-align vízszintesen, a vertical-align pedig
+   függőlegesen igazítja középre a cellák tartalmát. */
+table.chessboard td, table.chessboard th {
+    font-size: 2rem;
+    height: 4rem;
+    text-align: center;
+    vertical-align: middle;
+    width: 4rem;
+}
+
+/* A tbody első sorának összes td celláját választja ki.
+   Ezek a sakktábla legfelső mezői, ezért felső szegélyt kapnak. */
+table.chessboard > tbody > tr:first-child > td {
+    border-top: medium solid black;
+}
+
+/* A tbody utolsó sorának összes td celláját választja ki.
+   Ezek a sakktábla legalsó mezői, ezért alsó szegélyt kapnak. */
+table.chessboard > tbody > tr:last-child > td {
+    border-bottom: medium solid black;
+}
+
+/* A tbody minden sorában az első td cellát választja ki.
+   Ezek a sakktábla bal szélső mezői, ezért bal oldali szegélyt kapnak.
+
+   A first-of-type azért hasznos, mert a sorok első gyereke egy th,
+   így az első td nem a sor első gyereke. */
+table.chessboard > tbody > tr > td:first-of-type {
+    border-left: medium solid black;
+}
+
+/* A tbody minden sorában az utolsó td cellát választja ki.
+   Ezek a sakktábla jobb szélső mezői, ezért jobb oldali szegélyt kapnak.
+
+   A last-of-type az utolsó td elemet választja ki,
+   akkor is, ha utána még szerepel egy th cella. */
+table.chessboard > tbody > tr > td:last-of-type {
+    border-right: medium solid black;
+}
+
+/* A sakktábla azon td celláit választja ki, amelyek fölött az egérmutató van.
+   Az aktuális mező háttérszínét salmon színűre változtatja.
+
+   Az !important biztosítja, hogy ez a háttérszín felülírja
+   a sötét és világos mezők korábbi háttérszín-beállításait. */
+table.chessboard > tbody > tr > td:hover {
+    background-color: salmon !important;
+}

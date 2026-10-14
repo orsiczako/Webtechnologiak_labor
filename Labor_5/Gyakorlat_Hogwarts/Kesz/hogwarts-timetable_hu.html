@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <!-- Amennyiben van Emmettünk, úgy ! majd a felugró lehetőségek kiválasztásával egy default HTML-t tudunk generálni-->
+    <meta charset="UTF-8">
+
+    <!-- Reszponzív megjelenítéshez szükséges viewport-beállítás -->
+    <!-- A dokumentum rövid leírása -->
+    <meta name="description" content="A Hogwarts-themed timetable for Hogwarts students.">
+    <!---meta:vp majd utána tabbal le lehet generálni-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- A böngészőfülön megjelenő cím -->
+    <title>Roxforti órarend</title>
+
+    <!-- A külső CSS-stíluslap társítása -->
+    <link rel="stylesheet" href="hogwarts-timetable.css">
+</head>
+
+<body>
+    <!--
+        A table elem egy táblázatot hoz létre.
+    -->
+    <table class="timetable">
+
+        <!-- A thead az fejléc-->
+        <thead>
+            <!-- Egy táblázatsor -->
+            <tr>
+                <!-- A th fejléc-cellát jelent. A scope="col" azt jelzi, hogy a cella egy oszlop fejléce. Megjelenítésben sok dolog nem fog változni, viszont
+                akadálymentesség szempontjából fontos -->
+                <th scope="col">Időpont</th>
+                <th scope="col">Hétfő</th>
+                <th scope="col">Kedd</th>
+                <th scope="col">Szerda</th>
+                <th scope="col">Csütörtök</th>
+            </tr>
+        </thead>
+        <!-- A tbody a táblázat törzsét, vagyis a tényleges adatokat fogja össze -->
+        <tbody>
+            <tr>
+                <!-- A th az adott sor fejléce. Az &ndash; HTML karakterreferencia egy nagykötőjelet jelenít meg.-->
+                <th scope="row">8:00&ndash;9:00</th>
+                <!-- rowspan="2": a cella függőlegesen két sort foglal el.-->
+                <td rowspan="2">Átváltoztatástan</td>
+                <td>Bájitaltan</td>
+                <td rowspan="2">Bűbájtan</td>
+                <td rowspan="2">Sötét varázslatok kivédése</td>
+            </tr>
+            <!-- A hétfői, szerdai és csütörtöki cellák rowspan="2" miatt erre a sorra is átnyúlnak, ezért itt csak a Jóslástant kell megadni. -->
+            <tr>
+                <th scope="row">9:00&ndash;10:00</th>
+                <td>Jóslástan</td>
+            </tr>
+
+            <tr>
+                <th scope="row">10:00&ndash;10:30</th>
+                <!--
+                    colspan="4": a cella vízszintesen négy oszlopot foglal el.
+                -->
+                <td colspan="4">Szünet</td>
+            </tr>
+
+            <tr>
+                <th scope="row">10:30&ndash;11:30</th>
+                <td rowspan="2">Kviddics</td>
+                <td>Átváltoztatástan</td>
+                <td rowspan="2">Legendás lények gondozása</td>
+                <td>Sötét varázslatok kivédése</td>
+            </tr>
+
+            <tr>
+                <th scope="row">11:30&ndash;12:30</th>
+                <td>Asztronómia</td>
+                <td>Mugliismeret</td>
+            </tr>
+
+            <tr>
+                <th scope="row">12:30&ndash;13:30</th>
+                <td colspan="4">Ebédszünet</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

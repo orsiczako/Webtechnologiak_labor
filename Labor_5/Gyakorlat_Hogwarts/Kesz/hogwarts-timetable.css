@@ -1,0 +1,57 @@
+body {
+    background-color: floralwhite;
+    font-family: Georgia, "Times New Roman", serif;
+    /*A háttér legyen fehér*/
+}
+/*Ez azokat a table elemeket választja ki, amik a timetable osztályt használják*/
+table.timetable {
+    /*Ha ez nem lenne itt, akkor a táblázat cellái nem lennének összefüggőek*/
+    border-collapse: collapse;
+    box-shadow: 0 0 0.25rem black;
+    margin: 2rem auto;
+}
+/*Azokat a td és th elemeket választja ki, amik egy olyan table elemei aminek az osztálya a timetable*/
+table.timetable :is(td, th) {
+    /*A cellák szegélye legyen vékony, szilárd, black színű*/
+    border: thin solid black;
+    padding: 1rem;
+}
+/*Kibálasztja a timetable osztályú table közvetlen thead gyermekén belül található összes th elemet. Tehát lényegében a hétfő-kedd szerda stb-t*/
+table.timetable > thead th {
+    background-color: burlywood;
+    font-size: 125%;
+    font-variant: small-caps;
+    letter-spacing: 0.05rem;
+}
+/* Kiválasztja a timetable osztályú table közvetlen tbody gyermekén belül található összes td és th elemet.Tehát mindent, ami nem a hétfő-kedd szerda stb */
+table.timetable > tbody :is(td, th) {
+    text-align: left;
+    vertical-align: middle;
+}
+/* Kiválasztja a timetable osztályú table összes olyan td elemét, aminek van colspan attribútuma */
+table.timetable td[colspan] {
+    background-color: cornsilk;
+    letter-spacing: 0.2rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Kiválasztja a timetable osztályú table összes olyan td elemét, aminek nincs colspan attribútuma */
+table.timetable > tbody td:not([colspan]) {
+    transition-property: background-color, outline, transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+}
+/* Ha az egeret egy olyan td elem fölé visszük, amelynek nincs colspan attribútuma, az alábbi formázások lépnek érvénybe. */
+table.timetable > tbody td:not([colspan]):hover {
+    background-color: moccasin;
+
+    /* Az outline az elem köré rajzolt körvonal. A borderrel ellentétben nem foglal helyet a box modelben, így nem változtatja meg az elem méretét. */
+    outline: 4px solid goldenrod;
+
+    /* Az outline helyzetét szabályozza. A negatív érték miatt a körvonal 4 pixellel beljebb kerül, az elem belseje felé. */
+    outline-offset: -4px;
+
+    /* Az elemet az eredeti méretének 105%-ára nagyítja. */
+    transform: scale(1.05);
+}

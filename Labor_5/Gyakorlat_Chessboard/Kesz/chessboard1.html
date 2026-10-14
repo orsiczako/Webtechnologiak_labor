@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chessboard</title>
+    <link rel="stylesheet" href="chessboard1.css">
+</head>
+<body>
+    <!-- Emmett abbreviation to generate the board:
+
+        table.chessboard>thead>tr>th*10^^tbody>tr*8>th{$@-}+td*8+th{$@-}^^tfoot>tr>th*10
+
+        or
+
+        table.chessboard>(thead>tr>th*10)+(tbody>tr*8>th{$@-}+td*8+th{$@-})+(tfoot>tr>th*10)
+    -->
+    <table class="chessboard">
+        <thead>
+            <tr>
+                <th></th>
+                <th>a</th>
+                <th>b</th>
+                <th>c</th>
+                <th>d</th>
+                <th>e</th>
+                <th>f</th>
+                <th>g</th>
+                <th>h</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>8</th>
+                <td>&#x265c;</td>
+                <td>&#x265e;</td>
+                <td>&#x265d;</td>
+                <td>&#x265b;</td>
+                <td>&#x265a;</td>
+                <td>&#x265d;</td>
+                <td>&#x265e;</td>
+                <td>&#x265c;</td>
+                <th>8</th>
+            </tr>
+            <tr>
+                <th>7</th>
+                <td>&#x265f;</td>
+                <td>&#x265f;</td>
+                <td>&#x265f;</td>
+                <td>&#x265f;</td>
+                <td>&#x265f;</td>
+                <td>&#x265f;</td>
+                <td>&#x265f;</td>
+                <td>&#x265f;</td>
+                <th>7</th>
+            </tr>
+            <tr>
+                <th>6</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th>6</th>
+            </tr>
+            <tr>
+                <th>5</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th>5</th>
+            </tr>
+            <tr>
+                <th>4</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th>4</th>
+            </tr>
+            <tr>
+                <th>3</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th>3</th>
+            </tr>
+            <tr>
+                <th>2</th>
+                <td>&#x2659;</td>
+                <td>&#x2659;</td>
+                <td>&#x2659;</td>
+                <td>&#x2659;</td>
+                <td>&#x2659;</td>
+                <td>&#x2659;</td>
+                <td>&#x2659;</td>
+                <td>&#x2659;</td>
+                <th>2</th>
+            </tr>
+            <tr>
+                <th>1</th>
+                <td>&#x2656;</td>
+                <td>&#x2658;</td>
+                <td>&#x2657;</td>
+                <td>&#x2655;</td>
+                <td>&#x2654;</td>
+                <td>&#x2657;</td>
+                <td>&#x2658;</td>
+                <td>&#x2656;</td>
+                <th>1</th>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th></th>
+                <th>a</th>
+                <th>b</th>
+                <th>c</th>
+                <th>d</th>
+                <th>e</th>
+                <th>f</th>
+                <th>g</th>
+                <th>h</th>
+                <th></th>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

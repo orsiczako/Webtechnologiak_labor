@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chessboard</title>
+    <link rel="stylesheet" href="chessboard2.css">
+</head>
+<body>
+    <!-- Emmett abbreviation to generate the board:
+
+        table.chessboard>thead>tr>th*10^^tbody>tr*8>th{$@-}+td*8+th{$@-}^^tfoot>tr>th*10
+
+        or
+
+        table.chessboard>(thead>tr>th*10)+(tbody>tr*8>th{$@-}+td*8+th{$@-})+(tfoot>tr>th*10)
+    -->
+    <table class="chessboard">
+        <thead>
+            <tr>
+                <th></th>
+                <th>a</th>
+                <th>b</th>
+                <th>c</th>
+                <th>d</th>
+                <th>e</th>
+                <th>f</th>
+                <th>g</th>
+                <th>h</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>8</th>
+                <td class="blackRook"></td>
+                <td class="blackKnight"></td>
+                <td class="blackBishop"></td>
+                <td class="blackQueen"></td>
+                <td class="blackKing"></td>
+                <td class="blackBishop"></td>
+                <td class="blackKnight"></td>
+                <td class="blackRook"></td>
+                <th>8</th>
+            </tr>
+            <tr>
+                <th>7</th>
+                <td class="blackPawn"></td>
+                <td class="blackPawn"></td>
+                <td class="blackPawn"></td>
+                <td class="blackPawn"></td>
+                <td class="blackPawn"></td>
+                <td class="blackPawn"></td>
+                <td class="blackPawn"></td>
+                <td class="blackPawn"></td>
+                <th>7</th>
+            </tr>
+            <tr>
+                <th>6</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th>6</th>
+            </tr>
+            <tr>
+                <th>5</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th>5</th>
+            </tr>
+            <tr>
+                <th>4</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th>4</th>
+            </tr>
+            <tr>
+                <th>3</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <th>3</th>
+            </tr>
+            <tr>
+                <th>2</th>
+                <td class="whitePawn"></td>
+                <td class="whitePawn"></td>
+                <td class="whitePawn"></td>
+                <td class="whitePawn"></td>
+                <td class="whitePawn"></td>
+                <td class="whitePawn"></td>
+                <td class="whitePawn"></td>
+                <td class="whitePawn"></td>
+                <th>2</th>
+            </tr>
+            <tr>
+                <th>1</th>
+                <td class="whiteRook"></td>
+                <td class="whiteKnight"></td>
+                <td class="whiteBishop"></td>
+                <td class="whiteQueen"></td>
+                <td class="whiteKing"></td>
+                <td class="whiteBishop"></td>
+                <td class="whiteKnight"></td>
+                <td class="whiteRook"></td>
+                <th>1</th>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th></th>
+                <th>a</th>
+                <th>b</th>
+                <th>c</th>
+                <th>d</th>
+                <th>e</th>
+                <th>f</th>
+                <th>g</th>
+                <th>h</th>
+                <th></th>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

@@ -1,0 +1,49 @@
+@import "chessboard1.css";
+
+table.chessboard td.whiteKing::before {
+    content: "\2654";
+}
+
+table.chessboard td.whiteQueen::before {
+    content: "\2655";
+}
+
+table.chessboard td.whiteRook::before {
+    content: "\2656";
+}
+
+table.chessboard td.whiteBishop::before {
+    content: "\2657";
+}
+
+table.chessboard td.whiteKnight::before {
+    content: "\2658";
+}
+
+table.chessboard td.whitePawn::before {
+    content: "\2659";
+}
+
+table.chessboard td.blackKing::before {
+    content: "\265a";
+}
+
+table.chessboard td.blackQueen::before {
+    content: "\265b";
+}
+
+table.chessboard td.blackRook::before {
+    content: "\265c";
+}
+
+table.chessboard td.blackBishop::before {
+    content: "\265d";
+}
+
+table.chessboard td.blackKnight::before {
+    content: "\265e";
+}
+
+table.chessboard td.blackPawn::before {
+    content: "\265f";
+}
