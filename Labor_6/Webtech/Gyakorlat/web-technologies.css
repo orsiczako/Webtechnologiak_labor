@@ -1,0 +1,56 @@
+/* Google Fonts betűtípusok importálása:
+   Noto Sans a normál szövegekhez, Noto Sans Mono a kódokhoz. */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Az egész oldal alapvető megjelenése. */
+body {
+    background-color: whitesmoke;
+    font-family: "Noto Sans", sans-serif;
+    margin: 0;
+}
+
+/* A fejlécet, navigációt, cikkeket és láblécet
+   azonos kerettel, árnyékkal és térközökkel formázza. */
+header, nav#toc, article, footer {
+    background-color: white;
+    border: thin solid gray;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 0.25rem gray;
+    margin: 1em;
+    padding: 1em;
+}
+
+/* A toc vagy specs osztályú ul elemekben található
+   hivatkozások színét módosítja, amikor föléjük visszük az egeret. */
+ul:is(.toc, .specs) a:hover {
+    background-color: indigo;
+    color: white;
+}
+
+/* A pre elemeket, vagyis az előre formázott szövegeket formázza.
+   Hosszú sorok esetén vízszintes görgetést is biztosít. */
+pre {
+    background-color: aliceblue;
+    border-left: 0.5rem solid indigo;
+    border-radius: 0.25rem;
+    font-family: "Noto Sans Mono", monospace;
+    overflow-x: auto;
+    padding: 0.5rem;
+}
+
+/* A lábléc szövegét vízszintesen középre igazítja. */
+footer {
+    text-align: center;
+}
+
+/* A legal osztályú p elemben található képet
+   függőlegesen a szöveg közepéhez igazítja. */
+p.legal img {
+    vertical-align: middle;
+}
+
+/* A még nem látogatott (:link) és már meglátogatott (:visited)
+   hivatkozások színét egyaránt indigóra állítja. */
+a:is(:link, :visited) {
+    color: indigo;
+}

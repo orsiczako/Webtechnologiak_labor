@@ -1,0 +1,141 @@
+html {
+    background-color: #d8cbb5;
+    color: #333;
+}
+
+body {
+    background-color: #f8f3e8;
+    box-shadow: 0 0 1rem #999;
+    box-sizing: border-box;
+    font-family: "Palatino Linotype", Palatino, "Times New Roman", serif;
+    line-height: 1.6;
+    margin: 2rem auto;
+    padding: 2rem;
+    max-width: 80ch;
+}
+
+/* Headings and footer: */
+
+header, h2, h3, section.scene > div.stagedir, footer {
+    text-align: center;
+}
+
+header > hgroup, h2, div.speaker {
+    font-variant: small-caps;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+p.author, h3 {
+    font-size: 1.2rem;
+}
+
+header > hgroup, h2 {
+    letter-spacing: 0.08em;
+}
+
+h3 {
+    font-style: italic;
+}
+
+footer {
+    border-top: 1px solid #555;
+    font-size: 0.85rem;
+    margin-top: 2rem;
+    padding-top: 1rem;
+}
+
+/* Table of contents: */
+
+nav#toc {
+    border-top: 1px solid #555;
+}
+
+nav#toc a {
+    color: #333;
+    text-decoration: none;
+}
+
+nav#toc a:hover {
+    text-decoration: underline;
+}
+
+/* Acts and scenes: */
+
+section.act {
+    border-top: 2px solid #555;
+}
+
+section.scene {
+    border-top: 1px solid #555;
+}
+
+/* Speeches: */
+
+div.speech {
+    margin: 1rem 0;
+}
+
+div.speaker {
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+}
+
+/* Stage directions: */
+
+.stagedir {
+    color: #555;
+    font-style: italic;
+}
+
+.stagedir::before {
+    content: "(";
+}
+
+.stagedir::after {
+    content: ")";
+}
+
+section.scene > div.stagedir {
+    padding: 1rem;
+}
+
+div.speaker > span.stagedir {
+    font-weight: normal;
+}
+
+/* Line numbers: */
+
+section.scene {
+    counter-reset: line-number;
+}
+
+div.speech > div.line::after {
+    color: #aaa;
+    content: counter(line-number);
+    counter-increment: line-number;
+    float: right;
+    font-size: 0.75rem;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Hovering: */
+
+div.line:hover, div.stagedir:hover {
+    box-shadow: 0 0 0.5rem #999;
+}
+
+div.line:hover, div.stagedir:hover, div.line:hover > span.stagedir {
+    background-color: palegoldenrod;
+}
+
+div.line, div.stagedir, div.line > span.stagedir {
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}

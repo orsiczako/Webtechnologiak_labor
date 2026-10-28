@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Webtechnológiák</title>
+    <link rel="stylesheet" href="web-technologies.css">
+</head>
+
+<body>
+    <header>
+        <h1>Webtechnológiák</h1>
+        <p>
+            Utolsó módosítás:
+            <time datetime="2026-10-09">2026. október 9.</time>
+        </p>
+    </header>
+
+    <nav id="toc">
+        <h2>Tartalomjegyzék</h2>
+        <ul class="toc">
+            <li>
+                <a href="#json">JSON</a>
+            </li>
+            <li>
+                <a href="#css">CSS</a>
+            </li>
+            <li>
+                <a href="#html">HTML</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <article id="json">
+            <h2>JSON</h2>
+
+            <p>
+                A JavaScript Object Notation (JSON) egy könnyű, szövegalapú,
+                programozási nyelvtől független adatformátum, amelyet
+                adatok cseréjére használnak.
+            </p>
+
+            <h3>Specifikációk</h3>
+            <ul class="specs">
+                <li>
+                    <a href="https://ecma-international.org/publications-and-standards/standards/ecma-404/">
+                        ECMA-404: The JSON Data Interchange Syntax
+                    </a>
+                </li>
+                <li>
+                    <a href="https://datatracker.ietf.org/doc/html/rfc8259">
+                        RFC 8259: The JavaScript Object Notation (JSON) Data Interchange Format
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.iso.org/standard/71616.html">
+                        ISO/IEC 21778:2017: Information technology&mdash;The JSON data interchange syntax
+                    </a>
+                </li>
+            </ul>
+
+            <h3>Példakód</h3>
+            <pre>
+                {
+                    "title": "Batman Begins",
+                    "year": 2005,
+                    "rating": "PG-13",
+                    "genres": ["action", "crime", "drama"]
+                }
+            </pre>
+        </article>
+
+        <article id="css">
+            <h2>CSS</h2>
+
+            <p>
+                A Cascading Style Sheets (CSS) olyan nyelv, amely
+                strukturált dokumentumok (például HTML- és XML-dokumentumok)
+                megjelenítését írja le különböző megjelenítési környezetekben.
+            </p>
+
+            <h3>Specifikációk</h3>
+            <ul class="specs">
+                <li>
+                    <a href="https://www.w3.org/Style/CSS/current-work">
+                        A CSS-specifikációk teljes listája
+                    </a>
+                </li>
+            </ul>
+
+            <h3>Példakód</h3>
+            <pre>
+                h1, h2, h3, h4, h5, h6 {
+                    text-align: center;
+                }
+
+                table.summary > tbody > tr:nth-child(odd) > td {
+                    background-color: lightgray;
+                }
+            </pre>
+        </article>
+
+        <article id="html">
+            <h2>HTML</h2>
+
+            <p>
+                A HTML a világháló alapvető jelölőnyelve.
+            </p>
+
+            <h3>Specifikációk</h3>
+            <ul class="specs">
+                <li>
+                    <a href="https://html.spec.whatwg.org/">
+                        HTML-szabvány
+                    </a>
+                </li>
+            </ul>
+
+            <h3>Példakód</h3>
+            <pre>
+                &lt;!DOCTYPE html&gt;
+                &lt;html lang=&quot;en&quot;&gt;
+                    &lt;head&gt;
+                        &lt;title&gt;Hello, World!&lt;/title&gt;
+                        &lt;meta charset=&quot;UTF-8&quot;&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;p&gt;Hello, World!&lt;/p&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;
+            </pre>
+        </article>
+    </main>
+
+    <footer>
+        <p class="legal">
+            <small>
+                Ez a mű a
+                <a href="https://creativecommons.org/licenses/by/4.0/">
+                    Creative Commons Nevezd meg! 4.0 Nemzetközi
+                </a>
+                licenc feltételei szerint használható fel.
+            </small>
+            <img
+                src="https://licensebuttons.net/l/by/4.0/80x15.png"
+                alt="CC BY 4.0 licenc logója">
+        </p>
+    </footer>
+</body>
+
+</html>
