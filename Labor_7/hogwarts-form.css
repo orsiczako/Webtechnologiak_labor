@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Henny+Penny&display=swap');
+
+/*Az összes elem, és az utána lévő elem border box típusú kell, hogy legyen */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+/*Mindnek a betűtípusa*/
+body {
+    font-family: "EB Garamond", serif;
+}
+/*Legyen a címsor szép, középre igazítva, és legyen benne árnyék*/
+h1 {
+    font-family: "Henny Penny", sans-serif;
+    text-align: center;
+    text-shadow: 2px 2px 4px silver;
+}
+/*A fancy-form osztállyal rendelkező form elem*/
+form.fancy-form {
+    background-color: #f8faff;
+    border: medium solid indigo;
+    /*A böngésző automatikusan számítja ki a kétoldali margót, 
+    a rendelkezésre álló szabad helyet egyenlően elosztva, 
+    így az elem vízszintesen középre kerülhet.
+    margin: 0 auto; között a különbség az, hogy ez a felső margókat nem módosítja*/
+    margin-inline: auto;
+    max-width: 50ch;
+    /*Az overflow: auto; arra utal, hogy ha a tartalom nem fér el a konténerben, 
+    akkor automatikusan jelenjen meg a görgetősáv.
+    ez lehet 
+    scroll-> mindig megjelenik a görgetősáv
+    hidden-> soha nem jelenik meg a görgetősáv
+    */
+    overflow:auto; 
+/* Az űrlap kitölti a rendelkezésre álló szélességet,
+   de a max-width miatt legfeljebb 50ch széles lehet. */
+    width: 100%;
+}
+/*A fancy form összes div eleme között legyen távolság*/
+form.fancy-form div {
+    margin: 1rem;
+}
+/*Azokat a label elemeket választjuk ki, amiknek van:
+    - egy közvetlenül következő input, select vagy textarea elem
+    - és ezek az elemek kötelezőek (required) */
+form.fancy-form label:has(+ :is(input, select, textarea)[required])::after {
+    color: crimson;        /* A csillag piros színű. */
+    content: "*";          /* A csillag karaktert jeleníti meg. */
+    font-size: small;      /* Kisebb betűméret. */
+    vertical-align: super; /* A csillagot felső indexként emeli meg. */
+}
+/*Azokat az input mezőket választjuk ki, amik típusa checkbox, és nem
+    checked értékük van
+    na és akkor ezeknek kellene a közvetlen fieldset elemük, 
+    amennyiben nem checked úgy ne jelenjen meg*/
+form.fancy-form input[type=checkbox]:not(:checked) + fieldset.conditional {
+    display: none;
+}
+/*Új sorban kezdje a label elemet*/
+form.fancy-form label {
+    /*Ez annyira nem látványos, de ha inline lenne itt, 
+    akkor a margin bottom nem működne jól*/
+    display: block;
+    margin-bottom: 0.25em;
+}
+
+/*Az egyes input mezők stílusa*/
+form.fancy-form :is(input, select, textarea) {
+    border: medium solid darkslateblue;
+    border-radius: 0.25em;
+    padding: 0.5em;
+    width: 100%;
+}
+
+form.fancy-form textarea {
+    resize: vertical;
+}
+
+form.fancy-form > div:has(button[type=submit]) {
+    text-align: center;
+}
+
+form.fancy-form button[type=submit] {
+    background-color: darkslateblue;
+    border: none;
+    border-radius: 0.5em;
+    color: white;
+    cursor: pointer;
+    padding: 0.5em 1.5em;
+    transition: background-color 0.3s ease;
+}
+
+form.fancy-form button[type=submit]:hover {
+    background-color: forestgreen;
+}
+
+form.fancy-form input[type=email]:invalid {
+    background-color: tomato;
+    color: white;
+}
+/*az elemeket választja ki, amelyek éppen fókuszban vannak,
+ vagyis amelyekre a felhasználó aktuálisan irányítja a bevitelét*/
+form.fancy-form :focus {
+    outline: 5px solid forestgreen;
+    outline-offset: 1px;
+}

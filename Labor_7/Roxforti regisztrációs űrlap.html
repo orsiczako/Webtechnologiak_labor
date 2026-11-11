@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roxforti regisztrációs űrlap</title>
+    <link rel="stylesheet" href="hogwarts-form.css">
+</head>
+
+<body>
+    <h1>Roxforti regisztrációs űrlap</h1>
+    <!-- Egy példa: elearningen a profil szerkesztése, maga az egész cucc egy db form
+    Az action megadja, hogy hova küldjük a formot 
+      -->
+    <form class="fancy-form" method="post" enctype="multipart/form-data"
+        action="https://webhook.site/b979a006-6043-413e-84b1-4d83537b793a">
+        <!--
+        Itt ugye egy div fogja össze a mezőket, amúgy nélküle is működik,
+        de a formázás miatt, meg átláhatóság miatt mi hazsnáljuk,
+        a label egy felirat a for megadja, hogy 
+        minek a felirata, azt aminek a felirata annak az id-ját kell itt megadni-->
+        <div>
+            <label for="name">Név</label>
+            <!--Meg lehet adni az input típusát, például text, email, date stb.-->
+            <!--A name attribútum a mező nevét adja meg, ez akkor releváns
+            amikor a szerver felé küldjük az adatokat, mondjuk name= Harry Potter, az id pedig azonosítót.
+            A required annyit takar, hogy kötelező kitölteni-->
+            <input type="text" name="name" id="name" required placeholder="pl. Harry James Potter">
+        </div>
+        <div>
+            <label for="dob">Születési dátum</label>
+            <input type="date" name="dob" id="dob" required>
+        </div>
+        <!-- Amikor előre megadott lehetőségek vannak,
+        azt egy select elemmel lehet megvalósítani. 
+        kötelezőnek kell lennie (főként majd a kásobbi üres value miatt)-->
+        <div>
+            <label for="house">Ház</label>
+            <select name="house" id="house" required>
+                <!--Az üres value miatt ez nem egy valid opció, 
+                a value értékét küldi el a szervernek-->
+                <option value="">--Válassz egy lehetőséget--</option>
+                <option value="gryffindor">Griffendél</option>
+                <option value="hufflepuff">Hugrabug</option>
+                <option value="ravenclaw">Hollóhát</option>
+                <option value="slytherin">Mardekár</option>
+            </select>
+        </div>
+        <div>
+            <!--Checkbox mező, ennek az értéke boolean lesz-->
+            <label for="has-pet">Kijelentem, hogy van kisállatom.</label>
+            <!--A value = yes arra utal, hogy ha a checkbox be van jelölve, 
+            akkor a value értéke "yes" lesz-->
+            <input type="checkbox" name="has-pet" id="has-pet" value="yes">
+            <!--Ugye a példában láttuk, hogy csak akkor jelenik meg ez, 
+            ha a checkbox be van jelölve, ezért a conditional osztályt használjuk
+            majd css-ben elintézzük a feltételkezelést-->
+            <fieldset class="conditional">
+                <legend>Kisállat</legend>
+                <!-- A name maga a kulcs lesz, amit meg itt megadunk inputnak az a value, pl
+                 pet-species = bagoly-->
+                <label>Faj<input type="text" name="pet-species" placeholder="pl. bagoly"></label>
+                <label>Név<input type="text" name="pet-name" placeholder="pl. Hedvig"></label>
+            </fieldset>
+        </div>
+        <div>
+            <!--Az email mező, amelynek a value-ja egy email cím lesz-->
+            <label for="email">Email cím</label>
+            <!--A pattern
+            . (pont) tetszőleges karaktert jelöl, a + pedig azt mondja meg, 
+            hogy az előtte álló minta legalább egyszer forduljon elő
+            utána meg ac.uk végződésű email cím kell, hogy legyen, 
+            a \. pedig a pontot jelöli, de escapelni kell, 
+            mert a pontnak van egy speciális jelentése a reguláris kifejezésekben.
+            -->
+            <!--A title attribútum a buboréksúgó szövegét adja meg -->
+            <input type="email" name="email" id="email" pattern=".+@hogwarts\.ac\.uk"
+                placeholder="pl. hjp@hogwarts.ac.uk" title="Egy @hogwarts.ac.uk végződésű email cím megadása kötelező.">
+        </div>
+        <div>
+            <!-- A textarea többsoros szövegbevitelre szolgál.
+         A felhasználó tetszőleges szöveget megadhat, jelen esetben
+         legfeljebb 200 karakter hosszúságban.
+
+         Biztonsági szempontból fontos, hogy a megadott szöveget
+         a szerver megfelelően kezelje, mert a nem biztonságos
+         feldolgozás például XSS- vagy SQL injection támadáshoz vezethet. -->
+
+            <label for="comments">Megjegyzések</label>
+            <textarea name="comments" id="comments" rows="5" maxlength="200"
+                placeholder="pl. Benne szeretnék lenni a kviddics csapatban."></textarea>
+        </div>
+        <div>
+            <!-- A gomb, amely a form elküldésére szolgál 
+            a type="submit" azt jelenti, hogy a gomb megnyomásakor a form elküldésre kerül
+            felül megadtuk, hogy hová küldjük a formot -->
+            <button type="submit">Küldés</button>
+        </div>
+    </form>
+</body>
+
+</html>
