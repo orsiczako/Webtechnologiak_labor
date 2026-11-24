@@ -1,0 +1,20 @@
+body {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  margin: 0;
+}
+
+.dancing-letters {
+  font-family: sans-serif;
+  font-size: 300%;
+  font-weight: bold;
+}
+.dancing-letters > span {
+  box-shadow: 0 0 0.25em black;
+  color: white;
+  display: inline-block;
+  margin: 0.25em;
+  padding: 0.25em;
+}/*# sourceMappingURL=dancing-letters.css.map */

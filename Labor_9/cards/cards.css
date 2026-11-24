@@ -1,0 +1,84 @@
+
+body {
+    /* Kártyaasztal-hatású zöld háttér.*/
+    background-color: green;
+}
+
+.card {
+    background-color: white;
+    border: medium solid black;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+
+    font-family: sans-serif;
+
+    /* a .card egy <div>, az alapértelmezett display értéke
+       "block", egymás alatt jelennek meg*/
+    height: 3.5in;
+    width: 2.5in;
+}
+
+/* A HTML-ben üres <span class="rank"></span> elemek elé szúrja be az "A" betűt.
+   ELRENDEZÉS: a ::before pszeudoelem alapértelmezés szerint "inline" dobozt
+   hoz létre. Mivel a HTML-ben utána egy <br> tag szerepel, a rang ("A")
+   és alatta a szín szimbóluma két külön sorba törik. */
+.card[data-rank=A] span.rank::before {
+    content: "A";
+}
+
+.card[data-suit=spades] span.suit::before {
+    content: "\2660"; /* Pikk */
+}
+
+.card[data-suit=clubs] span.suit::before {
+    content: "\2663"; /*Treff */
+}
+
+.card[data-suit=hearts] span.suit::before {
+    content: "\2665"; /*Kőr */
+}
+
+.card[data-suit=diamonds] span.suit::before {
+    content: "\2666"; /*Káró */
+}
+
+/* A :is() pszeudoosztállyal összevonja a fekete lapokat.
+   A color tulajdonság öröklődik a kártyán belüli összes <span>-re és
+   ::before pszeudoelemre is. */
+.card:is([data-suit=clubs], [data-suit=spades]) {
+    color: black;
+}
+
+/* A piros lapok szöveg- és szimbólumszíne: */
+.card:is([data-suit=diamonds], [data-suit=hearts]) {
+    color: red;
+}
+
+.card :is(.topLeft, .bottomRight) {
+    /* 
+       A <span> alapértelmezés szerint "inline" elem. Az "inline-block" miatt:
+       1. Nem foglal el teljes sort (mint a block), így tartalomhoz igazodó
+          szélességű saját kis doboza lesz.
+       2. Működik rajta a függőleges padding és a későbbi transform (forgatás).
+       a .topLeft, a .center és a .bottomRight
+          egymás mellett, egy sorban a kártya bal felső sarkában sorakozik! */
+    display: inline-block;
+
+    font-size: 200%;
+
+    /* Belső térköz a kártya kerete és a sarokjelölés között */
+    padding: 0.25rem;
+
+    /* A kis sarokdobozon belül vízszintesen középre igazítja a rangot ("A")
+       és a <br> utáni szimbólumot, így a különböző szélességű karakterek
+       pontosan egymás alá kerülnek. */
+    text-align: center;
+}
+
+.card .center {
+    font-size: 400%;
+}
+
+.card .bottomRight {
+    transform: rotate(180deg);
+}

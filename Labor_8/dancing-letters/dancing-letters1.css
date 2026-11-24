@@ -1,0 +1,87 @@
+body {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  margin: 0;
+}
+
+.dancing-letters {
+  font-family: sans-serif;
+  font-size: 300%;
+  font-weight: bold;
+}
+.dancing-letters > span {
+  box-shadow: 0 0 0.25em black;
+  color: white;
+  display: inline-block;
+  margin: 0.25em;
+  padding: 0.25em;
+}
+
+.dancing-letters > span:nth-child(1) {
+  background-color: rgb(5, 226, 140);
+  transform: rotate(-12deg);
+}
+.dancing-letters > span:nth-child(2) {
+  background-color: rgb(104, 31, 13);
+  transform: rotate(-3deg);
+}
+.dancing-letters > span:nth-child(3) {
+  background-color: rgb(252, 91, 213);
+  transform: rotate(2deg);
+}
+.dancing-letters > span:nth-child(4) {
+  background-color: rgb(254, 213, 17);
+  transform: rotate(13deg);
+}
+.dancing-letters > span:nth-child(5) {
+  background-color: rgb(116, 230, 130);
+  transform: rotate(-2deg);
+}
+.dancing-letters > span:nth-child(6) {
+  background-color: rgb(43, 136, 139);
+  transform: rotate(0deg);
+}
+.dancing-letters > span:nth-child(7) {
+  background-color: rgb(47, 162, 239);
+  transform: rotate(-2deg);
+}
+.dancing-letters > span:nth-child(8) {
+  background-color: rgb(111, 6, 214);
+  transform: rotate(3deg);
+}
+.dancing-letters > span:nth-child(9) {
+  background-color: rgb(124, 200, 214);
+  transform: rotate(-13deg);
+}
+.dancing-letters > span:nth-child(10) {
+  background-color: rgb(193, 120, 112);
+  transform: rotate(-5deg);
+}
+.dancing-letters > span:nth-child(11) {
+  background-color: rgb(41, 222, 21);
+  transform: rotate(10deg);
+}
+.dancing-letters > span:nth-child(12) {
+  background-color: rgb(75, 66, 195);
+  transform: rotate(10deg);
+}
+.dancing-letters > span:nth-child(13) {
+  background-color: rgb(236, 59, 62);
+  transform: rotate(1deg);
+}
+.dancing-letters > span:nth-child(14) {
+  background-color: rgb(237, 25, 177);
+  transform: rotate(-12deg);
+}
+.dancing-letters > span:nth-child(15) {
+  background-color: rgb(189, 162, 93);
+  transform: rotate(1deg);
+}
+.dancing-letters > span:nth-child(16) {
+  background-color: rgb(243, 161, 124);
+  transform: rotate(-5deg);
+}
+
+/*# sourceMappingURL=dancing-letters1.css.map */

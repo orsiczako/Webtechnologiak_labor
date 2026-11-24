@@ -1,0 +1,13 @@
+@use "util";
+@use "dancing-letters";
+
+$rainbow: red, orange, yellow, green, blue, indigo, violet;
+
+.dancing-letters {
+    @for $i from 1 through 16 {
+        > span:nth-child(#{$i}) {
+            background-color: util.choose($rainbow);
+            transform: rotate((util.random(-15, 15)) + deg);
+        }
+    }
+}

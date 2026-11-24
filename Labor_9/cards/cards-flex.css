@@ -1,0 +1,56 @@
+@import "cards.css";
+
+body {
+    /* eltávolítja a böngésző alapértelmezett külső margóját
+       (kb. 8px) */
+    margin: 0;
+}
+
+.cards {
+    /* A .cards konténert rugalmas (flex) elrendezésűvé teszi
+       Alapértelmezett főtengelye vízszintes (flex-direction: row), ezért a
+       4 darab .card elem az eddigi függőleges oszlop helyett egymás mellé,
+       egy sorba rendeződik. */
+    display: flex;
+
+    /* ha a böngészőablak keskenyebb annál, mint hogy mind a 4 kártya
+       és a köztük lévő térközök elférjenek egy sorban, a kártyák nem zsugorodnak
+       össze és nem lógnak ki oldalra, hanem automatikusan új sorba tördelődnek. */
+    flex-wrap: wrap;
+
+    /* vízszintes és függőleges térköz*/
+    gap: 1rem;
+    margin: 1rem;
+}
+.card {
+    /* maga a kártyalap is flex-konténerré válik (felülírva a
+       cards.css-ből örökölt alapértelmezett block viselkedést).
+       Ennek hatására a három közvetlen gyereke (.topLeft, .center, .bottomRight)
+       flex-elemként vízszintesen egymás mellé kerül a kártya főtengelyén. */
+    display: flex;
+
+    /* A rendelkezésre álló vízszintes helyet egyenlően osztja el az elemek között:
+       - a .topLeft teljesen a bal szélre kerül,
+       - a .center vízszintesen pontosan középre kerül,
+       - a .bottomRight teljesen a jobb szélre kerül. */
+    justify-content: space-between;
+
+    /* (FÜGGŐLEGES – kereszttengely mentén):
+       Alapértelmezésben mindhárom belső elemet függőlegesen a kártya középvonalára */
+    align-items: center;
+}
+
+.topLeft {
+    /* felülírja a szülő .card "align-items: center" szabályát
+       kizárólag erre az elemre, és a függőleges kereszttengely elejére
+       (legfelülre) húzza — így a bal felső sarokba kerül. */
+    align-self: flex-start;
+}
+
+.bottomRight {
+    /* felülírja a szülő .card "align-items: center" szabályát
+       kizárólag erre az elemre, és a függőleges kereszttengely végére
+       (legalulra) tolja — így a cards.css-ben megadott 180°-os forgatással
+       együtt fejjel lefelé a jobb alsó sarokba kerül. */
+    align-self: flex-end;
+}

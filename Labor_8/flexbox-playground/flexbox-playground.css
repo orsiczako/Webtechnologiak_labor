@@ -1,0 +1,57 @@
+body {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+div#container, div#controls {
+    background-color: aliceblue;
+    border: thick solid indigo;
+}
+
+div#container {
+    display: flex;
+    height: 600px;
+    width: 600px;
+}
+
+div#controls {
+    align-self: flex-start; /* prevents vertical stretching */
+    padding: 0.5rem;
+    width: 200px;
+}
+
+div#controls > div {
+    margin: 0.5rem;
+}
+
+div#controls :is(button, select) {
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+div#controls label {
+    font-family: monospace;
+}
+
+div#controls label::after {
+    content: ":";
+}
+
+div.item {
+    align-items: center;
+    display: flex;
+    font-size: large;
+    height: 50px;
+    justify-content: center;
+    width: 50px;
+}
+
+div.item:nth-child(odd) {
+    background-color: coral;
+}
+
+div.item:nth-child(even) {
+    background-color: gold;
+}

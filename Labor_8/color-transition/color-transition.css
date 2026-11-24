@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+}
+
+div.columns {
+  display: flex;
+  height: 100vh;
+}
+div.columns > div {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+div.columns > div:nth-child(1) {
+  background-color: pink;
+}
+div.columns > div:nth-child(1)::before {
+  content: "pink";
+}
+div.columns > div:nth-child(2) {
+  background-color: #ffdfc0;
+}
+div.columns > div:nth-child(2)::before {
+  content: "#ffdfc0";
+}
+div.columns > div:nth-child(3) {
+  background-color: #f5ffc0;
+}
+div.columns > div:nth-child(3)::before {
+  content: "#f5ffc0";
+}
+div.columns > div:nth-child(4) {
+  background-color: #cbffc0;
+}
+div.columns > div:nth-child(4)::before {
+  content: "#cbffc0";
+}
+div.columns > div:nth-child(5) {
+  background-color: #c0ffdf;
+}
+div.columns > div:nth-child(5)::before {
+  content: "#c0ffdf";
+}
+div.columns > div:nth-child(6) {
+  background-color: #c0f5ff;
+}
+div.columns > div:nth-child(6)::before {
+  content: "#c0f5ff";
+}
+div.columns > div:nth-child(7) {
+  background-color: #c0cbff;
+}
+div.columns > div:nth-child(7)::before {
+  content: "#c0cbff";
+}
+div.columns > div:nth-child(8) {
+  background-color: #dfc0ff;
+}
+div.columns > div:nth-child(8)::before {
+  content: "#dfc0ff";
+}
+div.columns > div:nth-child(9) {
+  background-color: #ffc0f5;
+}
+div.columns > div:nth-child(9)::before {
+  content: "#ffc0f5";
+}
+div.columns > div:nth-child(10) {
+  background-color: pink;
+}
+div.columns > div:nth-child(10)::before {
+  content: "pink";
+}
+
+/*# sourceMappingURL=color-transition.css.map */

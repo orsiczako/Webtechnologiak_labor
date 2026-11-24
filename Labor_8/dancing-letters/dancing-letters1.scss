@@ -1,0 +1,12 @@
+@use "sass:math";
+@use "util";
+@use "dancing-letters";
+
+.dancing-letters {
+    @for $i from 1 through 16 {
+        > span:nth-child(#{$i}) {
+            background-color: rgb(math.random(256) - 1, math.random(256) - 1, math.random(256) - 1);
+            transform: rotate((util.random(-15, 15)) + deg);
+        }
+    }
+}

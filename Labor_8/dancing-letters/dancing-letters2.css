@@ -1,0 +1,87 @@
+body {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  margin: 0;
+}
+
+.dancing-letters {
+  font-family: sans-serif;
+  font-size: 300%;
+  font-weight: bold;
+}
+.dancing-letters > span {
+  box-shadow: 0 0 0.25em black;
+  color: white;
+  display: inline-block;
+  margin: 0.25em;
+  padding: 0.25em;
+}
+
+.dancing-letters > span:nth-child(1) {
+  background-color: violet;
+  transform: rotate(-14deg);
+}
+.dancing-letters > span:nth-child(2) {
+  background-color: yellow;
+  transform: rotate(-2deg);
+}
+.dancing-letters > span:nth-child(3) {
+  background-color: orange;
+  transform: rotate(5deg);
+}
+.dancing-letters > span:nth-child(4) {
+  background-color: green;
+  transform: rotate(12deg);
+}
+.dancing-letters > span:nth-child(5) {
+  background-color: blue;
+  transform: rotate(-2deg);
+}
+.dancing-letters > span:nth-child(6) {
+  background-color: green;
+  transform: rotate(-12deg);
+}
+.dancing-letters > span:nth-child(7) {
+  background-color: blue;
+  transform: rotate(-13deg);
+}
+.dancing-letters > span:nth-child(8) {
+  background-color: blue;
+  transform: rotate(6deg);
+}
+.dancing-letters > span:nth-child(9) {
+  background-color: red;
+  transform: rotate(4deg);
+}
+.dancing-letters > span:nth-child(10) {
+  background-color: yellow;
+  transform: rotate(-14deg);
+}
+.dancing-letters > span:nth-child(11) {
+  background-color: yellow;
+  transform: rotate(4deg);
+}
+.dancing-letters > span:nth-child(12) {
+  background-color: orange;
+  transform: rotate(9deg);
+}
+.dancing-letters > span:nth-child(13) {
+  background-color: indigo;
+  transform: rotate(10deg);
+}
+.dancing-letters > span:nth-child(14) {
+  background-color: violet;
+  transform: rotate(1deg);
+}
+.dancing-letters > span:nth-child(15) {
+  background-color: violet;
+  transform: rotate(13deg);
+}
+.dancing-letters > span:nth-child(16) {
+  background-color: red;
+  transform: rotate(2deg);
+}
+
+/*# sourceMappingURL=dancing-letters2.css.map */

@@ -1,0 +1,35 @@
+body {
+    font-family: sans-serif;
+}
+
+h1, footer {
+    text-align: center;
+}
+
+.images {
+    background-color: aliceblue;
+    box-shadow: 0 0 0.5rem darkblue;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-items: center;
+    padding: 1rem;
+}
+
+.images > img {
+    aspect-ratio: 3 / 2;
+    border-radius: 1rem;
+    box-shadow: 0 0 0.25rem darkblue;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.images > img:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    padding: 1rem;
+}

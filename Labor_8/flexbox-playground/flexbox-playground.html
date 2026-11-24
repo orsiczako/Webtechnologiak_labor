@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <title>Flexbox Playground</title>
+     <link rel="stylesheet" href="flexbox-playground.css">
+</head>
+
+<body>
+     <!-- A bemutató BAL oldali, kezdetben szándékosan ÜRES területe.
+         A JS Add Item gombnyomáskor ide hoz létre új div.item elemeket.
+         Az id="container" azért fontos, mert a JS ezt az elemet keresi,
+         és ennek a flex-direction / justify-content / align-items /
+         flex-wrap stílusát módosítja.  -->
+     <div id="container"></div>
+     <!-- A JOBB oldali vezérlőpanel. A container és a controls TESTVÉRelemek.
+         A CSS a body-t is flexkonténerré teszi: ennek hatására a két panel
+         egymás mellett jelenik meg. Az itteni választók kizárólag a bal
+         oldali #container viselkedését állítják, nem a jobb panelét. -->
+     <div id="controls">
+          <div>
+               <!-- A gomb azonosítójához a JS kattintáskezelőt rendel.
+                 A gomb minden kattintáskor új, sorszámozott div.item elemet
+                 tesz a bal oldali konténerbe. Így látványosan változtatható
+                 a flexelemek száma, és a tördelés is kipróbálható. -->
+               <button id="add-item-btn">Add Item</button>
+          </div>
+          <div>
+               <!-- Nem csak az elemeket kell törölni: a JS a konténerre
+                 korábban beállított inline CSS-értékeket is megszünteti,
+                 és visszaállítja a négy selectet az (unset) opcióra. -->
+               <button id="reset-btn">Reset</button>
+          </div>
+          <div>
+               <label for="flex-direction-select">flex-direction</label>
+               <select id="flex-direction-select">
+                    <option value="">(unset)</option>
+                    <option value="column">column</option>
+                    <option value="column-reverse">column-reverse</option>
+                    <option value="row">row</option>
+                    <option value="row-reverse">row-reverse</option>
+               </select>
+          </div>
+          <div>
+               <label for="justify-content-select">justify-content</label>
+               <select id="justify-content-select">
+
+                    <option value="">(unset)</option>
+                    <option value="flex-start">flex-start</option>
+                    <option value="flex-end">flex-end</option>
+                    <option value="center">center</option>
+                    <option value="start">start</option>
+                    <option value="end">end</option>
+                    <option value="space-between">space-between</option>
+                    <option value="space-around">space-around</option>
+                    <option value="space-evenly">space-evenly</option>
+               </select>
+          </div>
+          <div>
+               <label for="align-items-select">align-items</label>
+               <select id="align-items-select">
+                    <option value="">(unset)</option>
+                    <option value="flex-start">flex-start</option>
+                    <option value="flex-end">flex-end</option>
+                    <option value="center">center</option>
+                    <option value="start">start</option>
+                    <option value="end">end</option>
+               </select>
+          </div>
+          <div>
+               <!-- Azt állítjuk, hogy a flexelemek új sorba/oszlopba
+                 kerülhetnek-e, amikor már nem férnek el a főtengelyen. -->
+               <label for="flex-wrap-select">flex-wrap</label>
+               <select id="flex-wrap-select">
+                    <!-- Az üres értékű (unset) kiválasztásakor a JS eltávolítja
+                     az inline flex-wrap értéket, így az alapértelmezett
+                     'nowrap' lép életbe: nincs új flexsor/oszlop.
+                     Sok elem esetén a flexelemek inkább zsugorodhatnak. -->
+                    <option value="">(unset)</option>
+                    <option value="nowrap">nowrap</option>
+                    <option value="wrap">wrap</option>
+                    <option value="wrap-reverse">wrap-reverse</option>
+               </select>
+          </div>
+     </div>
+     <!-- A JS-t a body végén töltjük be, mert már léteznie kell
+         az összes gombnak és selectnek, amikor az eseménykezelőket
+         a document.getElementById(...) segítségével regisztráljuk. -->
+     <script src="flexbox-playground.js"></script>
+</body>
+
+</html>

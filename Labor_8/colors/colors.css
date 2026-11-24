@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+}
+
+div.columns {
+  /**/
+  display: flex;
+  height: 100vh;
+}
+div.columns > div {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+div.columns > div::before {
+  content: attr(id);
+}
+
+#lighter2 {
+  background-color: rgb(97.2093023256%, 92.2024623803%, 96.3748290014%);
+}
+
+#lighter1 {
+  background-color: rgb(91.9379844961%, 77.4737802098%, 90.7326341389%);
+}
+
+#base {
+  background-color: plum;
+}
+
+#darker1 {
+  background-color: rgb(78.6137710898%, 48.0164158687%, 81.3953488372%);
+}
+
+#darker2 {
+  background-color: rgb(68.9846481228%, 33.2877336981%, 76.1240310078%);
+}
+
+/*# sourceMappingURL=colors.css.map */
