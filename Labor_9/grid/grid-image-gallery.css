@@ -1,35 +1,59 @@
+/* Az oldal alapértelmezett betűtípusa */
 body {
     font-family: sans-serif;
 }
 
+/* A főcím és a lábléc szövegének vízszintes középre igazítása */
 h1, footer {
     text-align: center;
 }
 
+/* A képgaléria rácselrendezésű (grid) konténere */
 .images {
     background-color: aliceblue;
     box-shadow: 0 0 0.5rem darkblue;
+
+    /* Gridkonténerré alakítja az elemet, a közvetlen gyermekek (<img>) rácsba rendeződnek */
     display: grid;
+
+    /* Térköz a rács sorai és oszlopai között */
     gap: 1rem;
+
+    /* Reszponzív oszlopok media query nélkül: annyi legalább 300px-es oszlop kerül egymás mellé,
+       amennyi kifér, a fennmaradó helyet pedig egyenlően elosztják (1fr) */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    /* A képek vízszintes középre igazítása a saját cellájukon belül */
     justify-items: center;
+
+    /* Belső térköz a konténer széle és a képek között */
     padding: 1rem;
 }
 
+/* A galériában lévő képek formázása */
 .images > img {
+    /* Rögzített 3:2-es oldalarány */
     aspect-ratio: 3 / 2;
     border-radius: 1rem;
     box-shadow: 0 0 0.25rem darkblue;
+
+    /* A kép kitölti a cella szélességét, a magasság arányosan igazodik */
     height: auto;
-    object-fit: cover;
-    transition: transform 0.5s ease;
     width: 100%;
+
+    /* Torzítás nélkül tölti ki a dobozt, a kilógó részeket levágja */
+    object-fit: cover;
+
+    /* Sima, 0,5 másodperces átmenet a nagyításhoz és a visszaálláshoz */
+    transition: transform 0.5s ease;
 }
 
+/* Rámutatáskor 5%-os vizuális nagyítás (nem tolja el a szomszédos elemeket) */
 .images > img:hover {
     transform: scale(1.05);
 }
 
+/* Belső térköz a lábléc körül */
 footer {
     padding: 1rem;
 }
